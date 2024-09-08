@@ -17,8 +17,8 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
   </head>
-  <body >
-    <canvas id="unity-canvas"  ></canvas>
+  <body>
+    <canvas id="unity-canvas" style="background: #231f20"></canvas>
     <script src="Build/FlappyToken.Beta.loader.js"></script>
     <script>
       // if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -27,15 +27,15 @@
       //   meta.name = 'viewport';
       //   meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
       //   document.getElementsByTagName('head')[0].appendChild(meta);
-
-      //   var canvas = document.querySelector("#unity-canvas");
-      //   canvas.style.width = "100%";
-      //   canvas.style.height = "100%";
-      //   canvas.style.position = "fixed";
-
-      //   document.body.style.textAlign = "left";
+  
+      var canvas = document.querySelector("#unity-canvas");
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
+      canvas.style.position = "fixed"; // ??
+  
+      document.body.style.textAlign = "left";
       // }
-
+  
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/FlappyToken.Beta.data",
         frameworkUrl: "Build/FlappyToken.Beta.framework.js",
@@ -48,13 +48,13 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
-     <script>
+    <script>
       Telegram.WebApp.expand();
       const overflow = 100;
       document.body.style.overflowY = "hidden";
-      document.body.style.marginTop = `${overflow}px`;
+      document.body.style.marginTop = ${overflow}px;
       document.body.style.height = window.innerHeight + overflow + "px";
-      document.body.style.paddingBottom = `${overflow}px`;
+      document.body.style.paddingBottom = ${overflow}px;
       window.scrollTo(0, overflow);
       let ts;
       const onTouchStart = (e) => {
@@ -75,6 +75,5 @@
       });
       Telegram.WebApp.ready();
     </script>
-
   </body>
 </html>
